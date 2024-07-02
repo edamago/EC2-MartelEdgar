@@ -2,9 +2,11 @@ package pe.edu.idat.ec2_marteledgar
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -43,9 +45,9 @@ fun pantallaPrincipal(){
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
             )
         }})
-    Box (modifier = Modifier.padding(top = 100.dp)){
+    Column (modifier = Modifier.padding(top = 100.dp)){
         Text(text = "INFORMACION", modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center)
-        miEspacio(espacio = 15)
+        miEspacio(espacio = 5)
         OutlinedTextField(
             value = nombre,
             onValueChange = { nombre = it },
@@ -54,7 +56,7 @@ fun pantallaPrincipal(){
             maxLines = 1,
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text))
-        miEspacio(espacio = 15)
+        miEspacio(espacio = 5)
         OutlinedTextField(
             value = nombre,
             onValueChange = { nombre = it },
@@ -92,5 +94,11 @@ fun pantallaPrincipal(){
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text))
         miEspacio(espacio = 15)
         radioButton(color) {color=it}
+        Button(onClick = {
+
+        }, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "Acceder")
+        }
     }
+
 }
