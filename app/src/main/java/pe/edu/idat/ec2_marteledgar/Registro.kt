@@ -20,10 +20,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun pantallaPrincipal(){
+fun pantallaPrincipal(navController: NavController){
     var color by rememberSaveable {
         mutableStateOf("")
     }
@@ -65,7 +66,7 @@ fun pantallaPrincipal(){
             maxLines = 1,
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text))
-        miEspacio(espacio = 15)
+        miEspacio(espacio = 5)
         TextField(
             value = nombre,
             onValueChange = { nombre = it },
@@ -74,7 +75,7 @@ fun pantallaPrincipal(){
             maxLines = 1,
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text))
-        miEspacio(espacio = 15)
+        miEspacio(espacio = 5)
         OutlinedTextField(
             value = nombre,
             onValueChange = { nombre = it },
@@ -83,7 +84,7 @@ fun pantallaPrincipal(){
             maxLines = 1,
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text))
-        miEspacio(espacio = 15)
+        miEspacio(espacio = 5)
         OutlinedTextField(
             value = nombre,
             onValueChange = { nombre = it },
@@ -92,11 +93,9 @@ fun pantallaPrincipal(){
             maxLines = 1,
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text))
-        miEspacio(espacio = 15)
+        miEspacio(espacio = 5)
         radioButton(color) {color=it}
-        Button(onClick = {
-
-        }, modifier = Modifier.fillMaxWidth()) {
+        Button(onClick = {navController.navigate("Acceder")}, modifier = Modifier.fillMaxWidth()) {
             Text(text = "Acceder")
         }
     }
