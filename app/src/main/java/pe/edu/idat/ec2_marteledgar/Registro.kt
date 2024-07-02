@@ -22,6 +22,10 @@ import androidx.compose.ui.unit.dp
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun pantallaPrincipal(){
+    var color by rememberSaveable {
+        mutableStateOf("")
+    }
+
     var nombre by rememberSaveable {
         mutableStateOf("")
     }
@@ -86,6 +90,7 @@ fun pantallaPrincipal(){
             maxLines = 1,
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text))
-
+        miEspacio(espacio = 15)
+        radioButton(color) {color=it}
     }
 }
